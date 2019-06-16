@@ -13,7 +13,19 @@ define timecheck = 3  # start with 3, can change it later
 
 define event = [3,6,9]
 
-# progression variables here
+# progression variables here; can mess with values if needed
+
+# MC with RO proression
+
+define mcharveyrelationship = 0
+
+define mcedwinrelationship = 0
+
+define mcflecherrelationship = 0
+
+define mclucienrelationship = 0
+
+# other progression variables; I'll wait to add these
 
 
 
@@ -79,6 +91,13 @@ label start:
 
             $ save_name = "Day [daycheck]; with [timecheck] options left"
 
+            if timecheck == 3:
+
+                # quicksave/autosave game
+
+                $ FileTakeScreenshot()
+                $ renpy.save('quick-1')
+
             "It's day [daycheck] with [timecheck] actions left" # create images for this?
 
             $ timecheck -= 1
@@ -109,13 +128,13 @@ label start:
 
         # curse progression/group vist possibly?
 
-        jump dayaction # not sure if these should be treated as their own days
+        jump dayactions # not sure if these should be treated as their own days
 
     label event6:
 
         # curse progression/group vist possibly?
 
-        jump dayaction # not sure if these should be treated as their own days
+        jump dayactions # not sure if these should be treated as their own days
 
     label event9:
 
